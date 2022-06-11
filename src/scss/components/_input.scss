@@ -1,0 +1,20 @@
+form {
+  input[type="text"],
+  select {
+    display: inline-block;
+    width: 100%;
+    padding: 1.7rem 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  label {
+    font-size: 2rem;
+    font-weight: $font-light;
+    color: $color-dark_grey;
+  }
+}

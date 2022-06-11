@@ -1,0 +1,8 @@
+.box-filter {
+  .box-item {
+    margin-bottom: 1.5rem;
+    @include media-breakpoint-up(md) {
+      padding-right: 1rem;
+    }
+  }
+}

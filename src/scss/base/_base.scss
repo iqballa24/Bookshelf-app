@@ -1,46 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Patrick+Hand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Patrick+Hand&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html,body {
-    font-size: 62.5%; //1rem = 10px
-    height: 100%;
+html,
+body {
+  font-size: 62.5%; //1rem = 10px
+  height: 100%;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1 {
-    font-size: 2.4rem;
-    font-weight: $font-bold;
+  font-size: 1.8rem;
+  font-weight: $font-bold;
 }
 
-p{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: $font-regular;
-    color: $color-dark-grey;
-    font-size: 1.4rem;
+p {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: $font-regular;
+}
+
+.container {
+  @include wrapper;
+  padding-top: 6rem;
 }
 
 .fluid {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .scroll {
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    background-color: $color-white;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: $color-white;
 }
 
 ::-webkit-scrollbar {
-    width: .8rem;
+  width: 0.8rem;
 }
- 
+
 ::-webkit-scrollbar-track {
-    background-color: transparent;
+  background-color: transparent;
 }

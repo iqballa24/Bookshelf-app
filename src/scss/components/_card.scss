@@ -1,0 +1,45 @@
+.card {
+  &-container {
+    width: 100%;
+    border-radius: $border-md;
+    box-shadow: 4px 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  &-profile {
+    border-radius: $border-md;
+    background-color: $color-light_yellow;
+    padding: 3rem 3rem 2rem;
+
+    .header {
+      padding-bottom: 3rem;
+      margin-bottom: 1.5rem;
+      border-bottom: thin solid $color-light_gray-1;
+      text-align: center;
+
+      .img-wrapper {
+        img {
+          width: 100%;
+          max-width: 10rem;
+        }
+      }
+
+      .text-wrapper {
+        @include media-breakpoint-up(lg){
+            text-align: left;
+        }
+        h1 {
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+
+    .footer{
+      .box-stats{
+        text-align: center;
+        p{
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+}

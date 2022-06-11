@@ -1,0 +1,41 @@
+// text color
+.text-green {
+  color: $color-green;
+}
+
+.text-light_green {
+  color: $color-light_green;
+}
+
+.text-red {
+  color: $color-red;
+}
+
+.text-blue {
+  color: $color-blue;
+}
+
+.text-dark_grey{
+  color: $color-dark_grey;
+}
+
+// text size
+.text-xs{
+    font-size: 1.2rem;
+}
+
+.text-sm{
+    font-size: 1.4rem;
+}
+
+.text-base{
+    font-size: 1.6rem;
+}
+
+.text-md{
+    font-size: 1.8rem;
+}
+
+.text-lg{
+    font-size: 2.4rem;
+}

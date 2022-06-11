@@ -1,5 +1,3 @@
-// --FONT--
-
 // font weight
 $font-light: 300;
 $font-regular: 400;
@@ -9,13 +7,22 @@ $font-bold: 700;
 
 // --COLOURS--
 $color-red: #FF9696;
-$color--blue: #96C0FF;
+$color-blue: #96C0FF;
 $color-white: #fff;
-$color-light-yellow: #FFFFED;
+$color-yellow: rgb(255, 255, 190);
+$color-light_yellow: #FFFFED;
 $color-green: #6F804D;
-$color-ligth-green: #829C4E;
-$color-dark-grey: #757575;
-$color-light-gray-1: #D0DCCB;
-$color-light-gray-2: #79797a;
-$color-light-gray-3: #6D6D6D;
-$color-light-gray-4: #3d3d3d;
+$color-light_green: #829C4E;
+$color-dark_green: #4f5a38;
+$color-dark_grey: #757575;
+$color-light_gray-1: #D0DCCB;
+$color-light_gray-2: #79797a;
+$color-light_gray-3: #6D6D6D;
+$color-light_gray-4: #3d3d3d;
+
+// BORDER RADIUS
+$border-sm: 4px;
+$border-md: 8px;
+$border-lg: 12px;
+$border-xl: 16px;
+$border-2xl: 32px;

@@ -1,0 +1,6 @@
+.left-side {
+  margin-bottom: 3rem;
+  @include media-breakpoint-up(md) {
+    padding-right: 3rem;
+  }
+}
