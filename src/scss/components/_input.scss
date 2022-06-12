@@ -12,6 +12,13 @@ form {
     box-sizing: border-box;
   }
 
+  input[type="checkbox"] {
+    font: inherit;
+    width: 2rem;
+    height: 2rem;
+    border-radius: $border-md;
+  }
+
   label {
     font-size: 2rem;
     font-weight: $font-light;

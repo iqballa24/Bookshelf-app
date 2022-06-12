@@ -16,7 +16,7 @@ class FilterStatus extends HTMLElement {
     this.innerHTML = `
           <div class="box-list-book">
               <div class="filter-container">
-                  <img src="public/icon/icon-filter.svg">
+                  <object data="public/icon/icon-filter.svg"> </object>
                   <select id="filterStatus" name="filter-status">
                       <option value="all">All</option>
                       <option value="read">Read</option>

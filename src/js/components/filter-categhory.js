@@ -1,3 +1,4 @@
+import { categhory } from "../constant/index.js";
 class FilterCateghory extends HTMLElement {
   connectedCallback() {
     this.render();
@@ -9,31 +10,28 @@ class FilterCateghory extends HTMLElement {
   }
 
   get value() {
-    return this.querySelector("#filterCateghory").value;
+    return this.querySelector("#filterElement").value;
   }
 
   render() {
+    let itemCateghory = "";
+    categhory.map((item) => {
+      itemCateghory += `<option value="${item.value}">${item.text}</option>`;
+    });
+
     this.innerHTML = `
         <div class="box-list-book">
             <div class="filter-container">
-                <img src="public/icon/icon-filter.svg">
-                <select id="filterCateghory" name="filter-categhory">
+                <object data="public/icon/icon-filter.svg"> </object>
+                <select id="filterElement" name="filter-categhory">
                     <option value="all">All</option>
-                    <option value="science">Science</option>
-                    <option value="education">Education</option>
-                    <option value="nature">Nature</option>
-                    <option value="math">Math</option>
-                    <option value="general">General</option>
-                    <option value="animal">Animal</option>
-                    <option value="animal">Animal</option>
-                    <option value="technology">Technology</option>
-                    <option value="kids">Kids</option>
+                    ${itemCateghory}
                 </select>
             </div>
         </div>
       `;
 
-    this.querySelector("#filterCateghory").addEventListener(
+    this.querySelector("#filterElement").addEventListener(
       "change",
       this._clickEvent
     );

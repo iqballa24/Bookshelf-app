@@ -5,11 +5,10 @@
   border-radius: $border-md;
   transition: 0.2s ease;
 
-  img {
+  object {
     top: 1.6rem;
     right: 2rem;
     position: absolute;
-    z-index: 1;
   }
 
   select {

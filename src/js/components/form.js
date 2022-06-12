@@ -1,3 +1,4 @@
+import { categhory } from "../constant/index.js";
 class Form extends HTMLElement {
   connectedCallback() {
     this.isShow = this.getAttribute("isShow") || null;
@@ -5,6 +6,11 @@ class Form extends HTMLElement {
   }
 
   render() {
+    let itemCateghory = "";
+    categhory.map((item) => {
+      itemCateghory += `<option value="${item.value}">${item.text}</option>`;
+    });
+
     this.innerHTML = `
     <div class="form-container">
         <div class="form-content">
@@ -37,17 +43,10 @@ class Form extends HTMLElement {
                 />
                 <label for="title">Categhory</label>
                 <select id="categhory" name="categhory" required>
-                    <option value="" disable>Select categhory</option>
-                    <option value="science">Science</option>
-                    <option value="education">Education</option>
-                    <option value="nature">Nature</option>
-                    <option value="math">Math</option>
-                    <option value="general">General</option>
-                    <option value="animal">Animal</option>
-                    <option value="animal">Animal</option>
-                    <option value="technology">Technology</option>
-                    <option value="kids">Kids</option>
+                    <option value="" disabled selected>Select categhory</option>
+                    ${itemCateghory}
                 </select>
+                <input id="isComplete" type="checkbox"> <label style="margin-left: .8rem">Read</label>
                 <div class="flex-row" style="margin-top: 5rem">
                 <div class="w-sm-12 w-6">
                     <button id="btnReset" type="button" class="btn btn-reset">Reset</button>

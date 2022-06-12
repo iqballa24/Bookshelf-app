@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="Bookshelf" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.css">
     <link rel="stylesheet" href="src/css/main.css" />
     <title>Bookshelf</title>
   </head>
   <body>
-    <header class="container">
+    <main class="container" style="position: relative;">
+      <div class="background">
+        <img src="./public/img/background.jpg">
+      </div>
       <div class="flex-row">
         <div class="left-side w-md-12 w-5">
           <card-profile></card-profile>
@@ -23,15 +27,13 @@
           </button>
           <form-input></form-input>
         </div>
-        <div class="w-md-12 w-7">
+        <div class="right-side w-md-12 w-7">
             <box-filter></box-filter>
-            <div class="box-list-book" style="margin-top: 4rem;">
-              <p>Tester</p>
-            </div>
+            <div id="list-book" class="list-book"></div>
           </div>
         </div>
       </div>
-    </header>
+    </main>
 
     <script src="src/js/app.js" type="module"></script>
   </body>

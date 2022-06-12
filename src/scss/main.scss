@@ -12,10 +12,12 @@
     "components/buttons", 
     "components/search", 
     "components/filter",
-    "components/boxfilter";
+    "components/boxfilter",
+    "components/tag";
 
 @import 
     "layouts/form", 
-    "layouts/flex";
+    "layouts/flex",
+    "layouts/display";
 
 @import "pages/home";

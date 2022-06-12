@@ -1,0 +1,16 @@
+.sm-hidden {
+  @include media-breakpoint-down(sm) {
+    display: none !important;
+  }
+}
+
+.md-hidden {
+  @include media-breakpoint-down(md) {
+    display: none !important;
+  }
+}
+.lg-hidden {
+  @include media-breakpoint-down(lg) {
+    display: none !important;
+  }
+}
