@@ -1,6 +1,4 @@
 import "./tag-box.js";
-import { deleteBook } from "../data/action.js";
-
 class ItemBook extends HTMLElement {
   set book(book) {
     this._book = book;
@@ -45,7 +43,6 @@ class ItemBook extends HTMLElement {
             </div>              
         </div>
       `;
-    
   }
 }
 

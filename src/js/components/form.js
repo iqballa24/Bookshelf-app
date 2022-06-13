@@ -52,7 +52,7 @@ class Form extends HTMLElement {
                     <button id="btnReset" type="button" class="btn btn-reset">Reset</button>
                 </div>
                 <div class="w-sm-12 w-6">
-                    <button type="submit" class="btn btn-save">Save</button>
+                    <button id="btnSave" type="submit" class="btn btn-save">Save</button>
                 </div>
                 </div>
             </form>

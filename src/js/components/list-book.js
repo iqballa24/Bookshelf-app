@@ -2,8 +2,12 @@ import "./item-book.js";
 
 class ListBook extends HTMLElement {
   set books(books) {
-    this._books = books;
-    this.render();
+    if (books.length > 0) {
+      this._books = books;
+      this.render();
+    } else {
+      this.renderEmptyState()
+    }
   }
 
   render() {
@@ -14,20 +18,8 @@ class ListBook extends HTMLElement {
     });
   }
 
-  renderError() {
-    this.innerHTML = `
-        <style>
-            .placeholder {
-            font-weight: lighter;
-            color: rgba(0,0,0,0.5);
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            }
-            
-        </style>`;
-    this.innerHTML += `<h2 class="placeholder">Tester</h2>`;
+  renderEmptyState() {
+    this.innerHTML = `<h1>Book is not found!</h1>`;
   }
 }
 
