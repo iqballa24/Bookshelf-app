@@ -1,4 +1,4 @@
-class FilterStatus extends HTMLElement {
+class FilterShelf extends HTMLElement {
   connectedCallback() {
     this.render();
   }
@@ -9,7 +9,7 @@ class FilterStatus extends HTMLElement {
   }
 
   get value() {
-    return this.querySelector("#filterStatus").value;
+    return this.querySelector("#filterShelf").value;
   }
 
   render() {
@@ -17,7 +17,7 @@ class FilterStatus extends HTMLElement {
           <div class="box-list-book">
               <div class="filter-container">
                   <object data="public/icon/icon-filter.svg"> </object>
-                  <select id="filterStatus" name="filter-status">
+                  <select id="filterShelf" name="filter-shelf">
                       <option value="all">All</option>
                       <option value="read">Read</option>
                       <option value="unread">Unread</option>
@@ -26,11 +26,11 @@ class FilterStatus extends HTMLElement {
           </div>
         `;
 
-    this.querySelector("#filterStatus").addEventListener(
+    this.querySelector("#filterShelf").addEventListener(
       "change",
       this._clickEvent
     );
   }
 }
 
-customElements.define("filter-status", FilterStatus);
+customElements.define("filter-shelf", FilterShelf);

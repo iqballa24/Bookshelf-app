@@ -1,6 +1,6 @@
 import "./search-bar.js"
 import "./filter-categhory.js"
-import "./filter-status.js"
+import "./filter-shelf.js"
 
 class BoxFilter extends HTMLElement {
   connectedCallback() {
@@ -17,7 +17,7 @@ class BoxFilter extends HTMLElement {
               <filter-categhory></filter-categhory>
             </div>
             <div class="box-item w-md-6 w-3">
-              <filter-status></filter-status>
+              <filter-shelf></filter-shelf>
             </div>
         </div>
       `;

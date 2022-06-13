@@ -28,15 +28,15 @@ class CardProfile extends HTMLElement {
                 <div class="footer flex-row">
                     <div class="box-stats w-4">
                     <p class="text-sm text-dark_grey">Total</p>
-                    <h1 class="text-dark_grey">4</h1>
+                    <h1 id="textTotal" class="text-dark_grey">0</h1>
                     </div>
                     <div class="box-stats w-4">
                     <p class="text-sm text-dark_grey">Read</p>
-                    <h1 class="text-dark_grey">3</h1>
+                    <h1 id="textTotalRead" class="text-dark_grey">0</h1>
                     </div>
                     <div class="box-stats w-4">
                     <p class="text-sm text-dark_grey">Unread</p>
-                    <h1 class="text-dark_grey">1</h1>
+                    <h1 id="textTotalUnread" class="text-dark_grey">0</h1>
                     </div>
                 </div>
             </div>

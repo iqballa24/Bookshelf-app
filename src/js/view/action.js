@@ -18,11 +18,23 @@ const resetForm = () => {
   return form.reset();
 };
 
+const clearListBooks = () => {
+  document.querySelector("#list-book").innerHTML = "";
+};
+
 const renderListBook = (books) => {
   const bookListElement = document.createElement("list-book");
   bookListElement.books = books;
 
   return document.querySelector("#list-book").appendChild(bookListElement);
+};
+
+const toggleShowForm = (show) => {
+  const formContainer = document.querySelector(".form-container");
+
+  return show
+    ? (formContainer.style.display = "block")
+    : (formContainer.style.display = "none");
 };
 
 const findIndexBook = (idBook, books) => {
@@ -44,7 +56,7 @@ const getValueForm = () => {
   return { title, author, year, categhory, isComplete };
 };
 
-const addBook = (books) => {
+const addBook = () => {
   const data = getValueForm();
   const id = generateId();
   const dataBook = generateTodoObject(
@@ -87,20 +99,43 @@ const onSubmitForm = (action) => {
   const form = document.getElementById("form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    action
+    action;
     formContainer.style.display = "none";
     resetForm();
   });
 };
 
+const getTotalShelf = (books) => {
+  const textTotal = document.querySelector("#textTotal");
+  const textTotalRead = document.querySelector("#textTotalRead");
+  const textTotalUnread = document.querySelector("#textTotalUnread");
+
+  const totalRead = books.filter((book) => {
+    return book.isComplete;
+  });
+
+  const totalUnread = books.filter((book) => {
+    return !book.isComplete;
+  });
+
+  return (
+    (textTotal.innerHTML = books.length),
+    (textTotalRead.innerHTML = totalRead.length),
+    (textTotalUnread.innerHTML = totalUnread.length)
+  );
+};
+
 export {
   generateTodoObject,
+  clearListBooks,
   renderListBook,
+  toggleShowForm,
   getBookById,
+  getTotalShelf,
   addBook,
   updateBook,
   deleteBook,
   switchStatusRead,
   resetForm,
-  onSubmitForm
+  onSubmitForm,
 };

@@ -23,7 +23,7 @@ class FilterCateghory extends HTMLElement {
         <div class="box-list-book">
             <div class="filter-container">
                 <object data="public/icon/icon-filter.svg"> </object>
-                <select id="filterElement" name="filter-categhory">
+                <select id="filterCathegory" name="filter-categhory">
                     <option value="all">All</option>
                     ${itemCateghory}
                 </select>
@@ -31,7 +31,7 @@ class FilterCateghory extends HTMLElement {
         </div>
       `;
 
-    this.querySelector("#filterElement").addEventListener(
+    this.querySelector("#filterCathegory").addEventListener(
       "change",
       this._clickEvent
     );

@@ -19,7 +19,7 @@ class ListBook extends HTMLElement {
   }
 
   renderEmptyState() {
-    this.innerHTML = `<h1>Book is not found!</h1>`;
+    this.innerHTML = `<h1 class="text-green" style="text-align: center">Book is not found</h1>`;
   }
 }
 
