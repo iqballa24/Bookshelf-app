@@ -41,6 +41,7 @@ const categhory = [
   },
 ];
 const RENDER_EVENT = "render-books";
-const STORAGE_KEY = "BOOK_SHELF";
+const BOOKS_STORAGE_KEY = "BOOK_SHELF";
+const USER_STORAGE_KEY = "USER_DATA";
 
-export { categhory, RENDER_EVENT, STORAGE_KEY };
+export { categhory, RENDER_EVENT, BOOKS_STORAGE_KEY, USER_STORAGE_KEY };

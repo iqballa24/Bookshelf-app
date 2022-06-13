@@ -4,13 +4,31 @@ class CardProfile extends HTMLElement {
   }
 
   render() {
+    const avatar = [
+      "profile-1",
+      "profile-2",
+      "profile-3",
+      "profile-4",
+      "profile-5",
+      "profile-6",
+      "profile-7",
+      "profile-8",
+      "profile-9",
+      "profile-10",
+      "profile-11",
+      "profile-12",
+      "profile-13",
+      "profile-14",
+      "profile-15",
+    ];
+    const randomAvatar = avatar[Math.floor(Math.random() * avatar.length)];
     this.innerHTML = `
         <div class="card-container">
             <div class="card-profile">
                 <div class="header flex-row">
                     <div class="img-wrapper w-lg-12 w-4">
                     <img
-                        src="./public/img/profile/profile-1.png"
+                        src="./public/img/profile/${randomAvatar}.png"
                         alt="image profile"
                     />
                     </div>

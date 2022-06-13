@@ -1,4 +1,4 @@
-import { STORAGE_KEY, RENDER_EVENT } from "../constant/index.js";
+import { BOOKS_STORAGE_KEY, RENDER_EVENT, USER_STORAGE_KEY } from "../constant/index.js";
 
 const isStorageExist = () => {
   if (typeof(Storage) === undefined) {
@@ -9,7 +9,7 @@ const isStorageExist = () => {
 };
 
 const loadDataStorage = (books) => {
-  const serializeData = localStorage.getItem(STORAGE_KEY);
+  const serializeData = localStorage.getItem(BOOKS_STORAGE_KEY);
   let data = JSON.parse(serializeData);
 
   if (data !== null) {
@@ -21,11 +21,21 @@ const loadDataStorage = (books) => {
   document.dispatchEvent(new Event(RENDER_EVENT));
 };
 
-const saveToStorage = (books) => {
+const checkUserLogin = () => {
+  const serializeData = localStorage.getItem(USER_STORAGE_KEY);
+  let data = JSON.parse(serializeData)
+
+  if(data !== null){
+    return true
+  }
+  return false
+}
+
+const saveToStorage = (books, STORAGE_KEY) => {
   if (isStorageExist()) {
     const parsed = JSON.stringify(books);
     localStorage.setItem(STORAGE_KEY, parsed);
   }
 };
 
-export { isStorageExist, loadDataStorage, saveToStorage};
+export { isStorageExist, loadDataStorage, saveToStorage, checkUserLogin};

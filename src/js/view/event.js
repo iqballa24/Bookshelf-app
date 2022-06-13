@@ -1,5 +1,5 @@
 import searchStates from "./search.js";
-import { RENDER_EVENT } from "../constant/index.js";
+import { BOOKS_STORAGE_KEY, RENDER_EVENT } from "../constant/index.js";
 import { Swal, ToastShow } from "../swal.js";
 import {
   renderListBook,
@@ -14,7 +14,7 @@ import {
   resetForm,
   onSubmitForm,
 } from "./action.js";
-import { isStorageExist, loadDataStorage, saveToStorage } from "./main.js";
+import { isStorageExist, loadDataStorage, saveToStorage, checkUserLogin } from "./main.js";
 
 const searchElement = document.querySelector("#searchElement");
 const filterCathegory = document.querySelector("#filterCathegory");
@@ -48,7 +48,7 @@ const eventActionItemBook = () => {
             filterCathegory.value,
             filterShelf.value
           );
-          saveToStorage(initialBooks);
+          saveToStorage(initialBooks, BOOKS_STORAGE_KEY);
           Swal.fire("Deleted!", "Your file has been deleted.", "success");
           document.dispatchEvent(new Event(RENDER_EVENT));
         }
@@ -85,7 +85,7 @@ const eventActionItemBook = () => {
         filterCathegory.value,
         filterShelf.value
       );
-      saveToStorage(initialBooks);
+      saveToStorage(initialBooks, BOOKS_STORAGE_KEY);
       document.dispatchEvent(new Event(RENDER_EVENT));
     });
   }
@@ -182,12 +182,12 @@ btnReset.addEventListener("click", () => {
 btnSave.addEventListener("click", () => {
   if (idBook != null) {
     onSubmitForm((initialBooks = updateBook(idBook, initialBooks)));
-    saveToStorage(initialBooks);
+    saveToStorage(initialBooks, BOOKS_STORAGE_KEY);
     ToastShow("success", "Edit data succesfully");
     idBook = null;
   } else {
     onSubmitForm(initialBooks.push(addBook(initialBooks)));
-    saveToStorage(initialBooks);
+    saveToStorage(initialBooks, BOOKS_STORAGE_KEY);
     ToastShow("success", "Add data succesfully");
   }
   dataFilter = searchStates(
@@ -205,6 +205,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (isStorageExist) {
     loadDataStorage(initialBooks);
+    let userIsLoggedIn = checkUserLogin();
+    
+    if(userIsLoggedIn){
+      console.log('USER IS LOGGED IN')
+    }else{
+      console.log('USER NOT LOGGED IN')
+      window.location.pathname = "login.html";
+    }
   }
 });
 
