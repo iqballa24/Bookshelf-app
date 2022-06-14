@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (isStorageExist) {
     loadDataStorage(initialBooks);
     if (checkUserLogin() == false) {
-      return (window.location.pathname = "Bookshelf-app/login.html");
+      return (window.location.pathname = "login.html");
     } else {
       const serializeData = localStorage.getItem(USER_STORAGE_KEY);
       const data = JSON.parse(serializeData);
