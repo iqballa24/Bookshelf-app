@@ -63,7 +63,7 @@ const addBook = () => {
     id,
     data.title,
     data.author,
-    data.year,
+    Number(data.year),
     data.categhory,
     data.isComplete
   );
@@ -80,7 +80,7 @@ const updateBook = (idBook, books) => {
 
   books[index].title = data.title;
   books[index].author = data.author;
-  books[index].year = data.year;
+  books[index].year = Number(data.year);
   books[index].categhory = data.categhory;
   books[index].isComplete = data.isComplete;
 

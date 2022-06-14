@@ -35,7 +35,7 @@ class Form extends HTMLElement {
                 />
                 <label for="yaer">Year</label>
                 <input
-                    type="text"
+                    type="number"
                     id="year"
                     name="year"
                     placeholder="Fill year"
