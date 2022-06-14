@@ -7,7 +7,7 @@ const searchStates = (searchText, books, categhoryValue, statusValue) => {
     return (
       state.title.match(regex) ||
       state.author.match(regex) ||
-      state.year.match(regex)
+      state.year.toString().match(regex)
     );
   });
 

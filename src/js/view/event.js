@@ -188,7 +188,8 @@ btnReset.addEventListener("click", () => {
   resetForm();
 });
 
-btnSave.addEventListener("click", () => {
+btnSave.addEventListener("click", (e) => {
+  e.preventDefault()
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const year = document.getElementById("year").value;
@@ -204,7 +205,7 @@ btnSave.addEventListener("click", () => {
     return;
   }
   if (idBook != null) {
-    onSubmitForm((initialBooks = updateBook(idBook, initialBooks)));
+    onSubmitForm(initialBooks = updateBook(idBook, initialBooks));
     saveToStorage(initialBooks, BOOKS_STORAGE_KEY);
     ToastShow("success", "Edit data succesfully");
     idBook = null;
