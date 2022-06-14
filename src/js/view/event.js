@@ -1,5 +1,9 @@
 import searchStates from "./search.js";
-import { BOOKS_STORAGE_KEY, USER_STORAGE_KEY, RENDER_EVENT } from "../constant/index.js";
+import {
+  BOOKS_STORAGE_KEY,
+  USER_STORAGE_KEY,
+  RENDER_EVENT,
+} from "../constant/index.js";
 import { Swal, ToastShow } from "../swal.js";
 import {
   renderListBook,
@@ -185,6 +189,20 @@ btnReset.addEventListener("click", () => {
 });
 
 btnSave.addEventListener("click", () => {
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const year = document.getElementById("year").value;
+  const categhory = document.getElementById("categhory").value;
+  const isComplete = document.getElementById("isComplete").checked;
+  if (
+    title == "" ||
+    author == "" ||
+    year == "" ||
+    categhory == "" ||
+    isComplete == ""
+  ) {
+    return;
+  }
   if (idBook != null) {
     onSubmitForm((initialBooks = updateBook(idBook, initialBooks)));
     saveToStorage(initialBooks, BOOKS_STORAGE_KEY);
@@ -215,8 +233,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       const serializeData = localStorage.getItem(USER_STORAGE_KEY);
       const data = JSON.parse(serializeData);
-      document.getElementById("userName").innerText = data.name
-      document.getElementById("userProfession").innerText = data.profession
+      document.getElementById("userName").innerText = data.name;
+      document.getElementById("userProfession").innerText = data.profession;
     }
   }
 });

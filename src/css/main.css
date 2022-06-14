@@ -34,8 +34,8 @@ p {
 
 .container {
   width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1.2rem;
   margin-right: auto;
   margin-left: auto;
   padding-top: 6rem;
@@ -43,15 +43,15 @@ p {
 
 @media only screen and (min-width: 48em) {
   .container {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @media only screen and (min-width: 62em) {
   .container {
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 
@@ -391,6 +391,7 @@ form label {
 .filter-container select {
   cursor: pointer;
   border-radius: 8px;
+  background-color: #fff;
   padding: 2rem;
   width: 100%;
   font-size: 1.6rem;
@@ -837,7 +838,7 @@ form label {
 .list-book {
   overflow-y: hidden;
   height: 60rem;
-  padding: 1rem;
+  padding: 0.8rem;
   margin-top: 2rem;
   /* width */
   /* Track */
