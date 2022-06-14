@@ -877,4 +877,67 @@ form label {
   width: 100%;
   height: 26rem;
 }
+
+.login .right-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #FFFFED;
+  width: 100%;
+  height: 100vh;
+}
+
+.login .right-side img {
+  width: 100%;
+  max-width: 8rem;
+}
+
+.login .left-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.login .left-side img {
+  display: none;
+  width: 100%;
+  max-width: 8rem;
+}
+
+@media only screen and (max-width: 36em) {
+  .login .left-side img {
+    display: block;
+    margin: auto;
+    margin-bottom: 5rem;
+  }
+}
+
+.login .left-side .text-wrapper {
+  text-align: center;
+}
+
+.login .left-side .form-wrapper {
+  width: 100%;
+  padding: 2.5rem 8rem;
+}
+
+@media only screen and (max-width: 48em) {
+  .login .left-side .form-wrapper {
+    padding: 2rem;
+  }
+}
 /*# sourceMappingURL=main.css.map */

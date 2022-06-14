@@ -33,13 +33,13 @@ class CardProfile extends HTMLElement {
                     />
                     </div>
                     <div class="text-wrapper w-lg-12 w-8 align-self-center">
-                    <h1 class="text-green">Tengku Iqbal Nugraha</h1>
+                    <h1 id="userName" class="text-green">Tester</h1>
                     <p class="text-light_green">
                         <img
                         src="./public/icon/icon-rocket.svg"
                         alt="icon-rocket"
                         />
-                        Front end developer
+                        <span id="userProfession">Tester<span>
                     </p>
                     </div>
                 </div>

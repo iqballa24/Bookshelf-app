@@ -26,8 +26,10 @@ const checkUserLogin = () => {
   let data = JSON.parse(serializeData)
 
   if(data !== null){
+    console.log('USER IS LOGGED IN')
     return true
   }
+  console.log('USER NOT LOGGED IN')
   return false
 }
 

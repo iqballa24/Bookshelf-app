@@ -1,5 +1,5 @@
 import searchStates from "./search.js";
-import { BOOKS_STORAGE_KEY, RENDER_EVENT } from "../constant/index.js";
+import { BOOKS_STORAGE_KEY, USER_STORAGE_KEY, RENDER_EVENT } from "../constant/index.js";
 import { Swal, ToastShow } from "../swal.js";
 import {
   renderListBook,
@@ -14,7 +14,12 @@ import {
   resetForm,
   onSubmitForm,
 } from "./action.js";
-import { isStorageExist, loadDataStorage, saveToStorage, checkUserLogin } from "./main.js";
+import {
+  isStorageExist,
+  loadDataStorage,
+  saveToStorage,
+  checkUserLogin,
+} from "./main.js";
 
 const searchElement = document.querySelector("#searchElement");
 const filterCathegory = document.querySelector("#filterCathegory");
@@ -205,13 +210,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (isStorageExist) {
     loadDataStorage(initialBooks);
-    let userIsLoggedIn = checkUserLogin();
-    
-    if(userIsLoggedIn){
-      console.log('USER IS LOGGED IN')
-    }else{
-      console.log('USER NOT LOGGED IN')
-      window.location.pathname = "login.html";
+    if (checkUserLogin() == false) {
+      return (window.location.pathname = "login.html");
+    } else {
+      const serializeData = localStorage.getItem(USER_STORAGE_KEY);
+      const data = JSON.parse(serializeData);
+      document.getElementById("userName").innerText = data.name
+      document.getElementById("userProfession").innerText = data.profession
     }
   }
 });
