@@ -188,39 +188,40 @@ btnReset.addEventListener("click", () => {
   resetForm();
 });
 
-btnSave.addEventListener("click", (e) => {
-  e.preventDefault()
+btnSave.addEventListener("click", () => {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const year = document.getElementById("year").value;
   const categhory = document.getElementById("categhory").value;
   const isComplete = document.getElementById("isComplete").checked;
+
   if (
-    title == "" ||
-    author == "" ||
-    year == "" ||
-    categhory == "" ||
-    isComplete == ""
+    title != "" ||
+    author != "" ||
+    year != "" ||
+    categhory != "" ||
+    isComplete != ""
   ) {
-    return;
+    if (idBook != null) {
+      onSubmitForm((initialBooks = updateBook(idBook, initialBooks)));
+      saveToStorage(initialBooks, BOOKS_STORAGE_KEY);
+      ToastShow("success", "Edit data succesfully");
+      idBook = null;
+    } else {
+      onSubmitForm(initialBooks.push(addBook(initialBooks)));
+      saveToStorage(initialBooks, BOOKS_STORAGE_KEY);
+      ToastShow("success", "Add data succesfully");
+    }
+    dataFilter = searchStates(
+      searchElement.value,
+      initialBooks,
+      filterCathegory.value,
+      filterShelf.value
+    );
+    document.dispatchEvent(new Event(RENDER_EVENT));
+  }else{
+    ToastShow("warning", "Please to fill all data");
   }
-  if (idBook != null) {
-    onSubmitForm(initialBooks = updateBook(idBook, initialBooks));
-    saveToStorage(initialBooks, BOOKS_STORAGE_KEY);
-    ToastShow("success", "Edit data succesfully");
-    idBook = null;
-  } else {
-    onSubmitForm(initialBooks.push(addBook(initialBooks)));
-    saveToStorage(initialBooks, BOOKS_STORAGE_KEY);
-    ToastShow("success", "Add data succesfully");
-  }
-  dataFilter = searchStates(
-    searchElement.value,
-    initialBooks,
-    filterCathegory.value,
-    filterShelf.value
-  );
-  document.dispatchEvent(new Event(RENDER_EVENT));
 });
 
 document.addEventListener("DOMContentLoaded", () => {
