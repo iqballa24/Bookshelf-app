@@ -17,7 +17,7 @@ class ItemBook extends HTMLElement {
                     </div>
                     <div class="w-6 img-wrapper sm-hidden">
                       <div class="img-box">
-                          <object data="public/icon/icon-${this._book.categhory}.svg"></object>
+                          <object data="public/icon/icon-${this._book.categhory}.svg" aria-labelledby="${this._book.categhory}"></object>
                       </div>
                     </div>
                 </div>
@@ -29,13 +29,13 @@ class ItemBook extends HTMLElement {
                     <div class="w-sm-12 w-4 action-wrapper">
                       <div class="flex-row">
                         <button class="w-4 box-switch" id="btnSwitch" type="button" data-id="${this._book.id}">
-                          <img src="public/icon/icon-switch.svg"/>
+                          <img src="public/icon/icon-switch.svg" width="80%" alt="icon-switch"/>
                         </button>
                         <button class="w-4 box-edit" id="btnEdit" type="button" data-id="${this._book.id}">
-                          <img src="public/icon/icon-pen.svg"/>
+                          <img src="public/icon/icon-pen.svg" width="80%" alt="icon-pen"/>
                         </button>
                         <button class="w-4 box-trash" id="btnTrash" type="button" data-id="${this._book.id}">
-                          <img src="public/icon/icon-trash.svg"/>
+                          <img src="public/icon/icon-trash.svg" width="80%" alt="icon-trash"/>
                         </button>
                       </div>
                     </div>

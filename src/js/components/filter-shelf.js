@@ -16,7 +16,9 @@ class FilterShelf extends HTMLElement {
     this.innerHTML = `
           <div class="box-list-book">
               <div class="filter-container">
-                  <object data="public/icon/icon-filter.svg"> </object>
+                  <span>
+                    <i class="fa-solid fa-sort-down"></i>
+                  </span>
                   <select id="filterShelf" name="filter-shelf">
                       <option value="all">All</option>
                       <option value="read">Read</option>

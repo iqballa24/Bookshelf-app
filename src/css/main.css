@@ -333,9 +333,11 @@ form label {
   transition: 0.2s ease;
 }
 
-.search-container img {
+.search-container span {
+  font-size: 1.6rem;
+  color: #757575;
   top: 1.6rem;
-  left: 1.5rem;
+  left: 2rem;
   position: absolute;
 }
 
@@ -375,6 +377,7 @@ form label {
 .filter-container {
   position: relative;
   width: 100%;
+  background-color: white;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -382,16 +385,19 @@ form label {
   transition: 0.2s ease;
 }
 
-.filter-container object {
-  top: 1.6rem;
+.filter-container span {
+  font-size: 2rem;
+  color: #757575;
+  top: 1rem;
   right: 2rem;
   position: absolute;
+  z-index: 0;
 }
 
 .filter-container select {
   cursor: pointer;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: transparent;
   padding: 2rem;
   width: 100%;
   font-size: 1.6rem;

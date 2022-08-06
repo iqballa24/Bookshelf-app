@@ -28,6 +28,7 @@ class CardProfile extends HTMLElement {
                 <div class="header flex-row">
                     <div class="img-wrapper w-lg-12 w-4">
                     <img
+                        width="100%"
                         src="./public/img/profile/${randomAvatar}.png"
                         alt="image profile"
                     />
@@ -38,6 +39,8 @@ class CardProfile extends HTMLElement {
                         <img
                         src="./public/icon/icon-rocket.svg"
                         alt="icon-rocket"
+                        width="100%"
+                        style="max-width: 1.6rem"
                         />
                         <span id="userProfession">Tester<span>
                     </p>

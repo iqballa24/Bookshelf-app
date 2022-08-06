@@ -5,9 +5,11 @@
   border-radius: $border-md;
   transition: 0.2s ease;
 
-  img {
+  span {
+    font-size: 1.6rem;
+    color: #757575;
     top: 1.6rem;
-    left: 1.5rem;
+    left: 2rem;
     position: absolute;
   }
 

@@ -15,7 +15,9 @@ class SearchBar extends HTMLElement {
   render() {
     this.innerHTML = `
         <div class="search-container">
-            <img src="public/icon/icon-search.svg">
+          <span>
+            <i class="fa-solid fa-search"></i>
+          </span>
             <input placeholder="Search" id="searchElement" type="text">
         </div>
     `;

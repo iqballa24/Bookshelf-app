@@ -22,7 +22,9 @@ class FilterCateghory extends HTMLElement {
     this.innerHTML = `
         <div class="box-list-book">
             <div class="filter-container">
-                <object data="public/icon/icon-filter.svg"> </object>
+                <span>
+                  <i class="fa-solid fa-sort-down"></i>
+                </span>
                 <select id="filterCathegory" name="filter-categhory">
                     <option value="all">All</option>
                     ${itemCateghory}
