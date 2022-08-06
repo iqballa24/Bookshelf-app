@@ -24,18 +24,18 @@ form.addEventListener("submit", (e) => {
 
   if(isStorageExist()){
     saveToStorage(data, USER_STORAGE_KEY);
-    return (window.location.pathname = "index.html");
+    return (window.location.pathname = "Bookshelf-app/index.html");
   }else{
-    return (window.location.pathname = "index.html");
+    return (window.location.pathname = "Bookshelf-app/index.html");
   }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   if (isStorageExist()) {
     if (checkUserLogin()) {
-      return (window.location.pathname = "index.html");
+      return (window.location.pathname = "Bookshelf-app/index.html");
     }
   }else{
-    return (window.location.pathname = "index.html");
+    return (window.location.pathname = "Bookshelf-app/index.html");
   }
 });
