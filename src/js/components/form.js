@@ -1,4 +1,5 @@
 import { categhory } from "../constant/index.js";
+import { resetForm } from "../view/action.js";
 class Form extends HTMLElement {
   connectedCallback() {
     this.isShow = this.getAttribute("isShow") || null;
@@ -62,6 +63,7 @@ class Form extends HTMLElement {
     this.querySelector(".close").addEventListener("click", function () {
       let formContainer = document.querySelector(".form-container");
       formContainer.style.display = "none";
+      resetForm();
     });
   }
 }
