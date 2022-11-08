@@ -1,27 +1,13 @@
+import iconRocket from "../../../public/icon/icon-rocket.svg";
+import randomAvatar from "../utils/randomAvatar";
+
 class CardProfile extends HTMLElement {
   connectedCallback() {
     this.render();
   }
 
   render() {
-    const avatar = [
-      "profile-1",
-      "profile-2",
-      "profile-3",
-      "profile-4",
-      "profile-5",
-      "profile-6",
-      "profile-7",
-      "profile-8",
-      "profile-9",
-      "profile-10",
-      "profile-11",
-      "profile-12",
-      "profile-13",
-      "profile-14",
-      "profile-15",
-    ];
-    const randomAvatar = avatar[Math.floor(Math.random() * avatar.length)];
+    const avatar = randomAvatar();
     this.innerHTML = `
         <div class="card-container">
             <div class="card-profile">
@@ -29,7 +15,7 @@ class CardProfile extends HTMLElement {
                     <div class="img-wrapper w-lg-12 w-4">
                     <img
                         width="100%"
-                        src="./public/img/profile/${randomAvatar}.png"
+                        src="${avatar}"
                         alt="image profile"
                     />
                     </div>
@@ -37,7 +23,7 @@ class CardProfile extends HTMLElement {
                     <h1 id="userName" class="text-green">Tester</h1>
                     <p class="text-light_green">
                         <img
-                        src="./public/icon/icon-rocket.svg"
+                        src="${iconRocket}"
                         alt="icon-rocket"
                         width="100%"
                         style="max-width: 1.6rem"

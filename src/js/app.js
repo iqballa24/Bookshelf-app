@@ -9,7 +9,7 @@ import {
   USER_STORAGE_KEY,
   RENDER_EVENT,
 } from "./constant/index.js";
-import { Swal, ToastShow } from "./swal.js";
+import { Swal, ToastShow } from "./vendor.js";
 import StorageService from "./service/storage.service.js";
 import APIService from "./service/API.service.js";
 
