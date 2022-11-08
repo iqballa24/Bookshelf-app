@@ -9,7 +9,7 @@
 - [x] Manfaatkan localStorage dalam Menyimpan Data Buku
 
 ## Deploy
-* [github](https://iqballa24.github.io/Bookshelf-app/)
+* [github](https://iqballa24.github.io/Bookshelf-app/dist)
 
 ## Screenshot
 ![login](https://user-images.githubusercontent.com/57162533/173523646-22f46db3-c4f5-4c52-93fc-53f0753ad2ac.jpg)
