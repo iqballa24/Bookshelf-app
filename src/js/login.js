@@ -1,4 +1,4 @@
-import { ToastShow } from "./swal.js";
+import { ToastShow } from "./vendor";
 import { BOOKS_STORAGE_KEY, USER_STORAGE_KEY } from "./constant/index.js";
 import StorageService from "./service/storage.service.js";
 

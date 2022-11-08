@@ -1,4 +1,8 @@
 import "./tag-box.js";
+import iconSwitch from "../../../public/icon/icon-switch.svg";
+import iconPen from "../../../public/icon/icon-pen.svg";
+import iconTrash from "../../../public/icon/icon-trash.svg";
+import selectedCathegory from "../utils/cathegoryIconPicker.js";
 class ItemBook extends HTMLElement {
   set book(book) {
     this._book = book;
@@ -7,6 +11,7 @@ class ItemBook extends HTMLElement {
 
   render() {
     let status = this._book.isComplete ? "read" : "unread";
+    let iconCathegory = selectedCathegory(this._book.categhory);
     this.innerHTML = `
         <div class="card-container" style="margin-bottom: 5rem;">
             <div class="card-item-book">
@@ -17,7 +22,7 @@ class ItemBook extends HTMLElement {
                     </div>
                     <div class="w-6 img-wrapper sm-hidden">
                       <div class="img-box">
-                          <object data="public/icon/icon-${this._book.categhory}.svg" aria-labelledby="${this._book.categhory}"></object>
+                          <object data="${iconCathegory}" aria-labelledby="${this._book.categhory}"></object>
                       </div>
                     </div>
                 </div>
@@ -29,13 +34,13 @@ class ItemBook extends HTMLElement {
                     <div class="w-sm-12 w-4 action-wrapper">
                       <div class="flex-row">
                         <button class="w-4 box-switch" id="btnSwitch" type="button" data-id="${this._book.id}">
-                          <img src="public/icon/icon-switch.svg" width="80%" alt="icon-switch"/>
+                          <img src="${iconSwitch}" width="80%" alt="icon-switch"/>
                         </button>
                         <button class="w-4 box-edit" id="btnEdit" type="button" data-id="${this._book.id}">
-                          <img src="public/icon/icon-pen.svg" width="80%" alt="icon-pen"/>
+                          <img src="${iconPen}" width="80%" alt="icon-pen"/>
                         </button>
                         <button class="w-4 box-trash" id="btnTrash" type="button" data-id="${this._book.id}">
-                          <img src="public/icon/icon-trash.svg" width="80%" alt="icon-trash"/>
+                          <img src="${iconTrash}" width="80%" alt="icon-trash"/>
                         </button>
                       </div>
                     </div>

@@ -1,5 +1,6 @@
-import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/src/sweetalert2.js";
-import { RENDER_EVENT } from "./constant/index.js";
+// import "sweetalert2/src/sweetalert2.scss";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import 'sweetalert2/src/sweetalert2.scss';
 
 const Toast = Swal.mixin({
   toast: true,
