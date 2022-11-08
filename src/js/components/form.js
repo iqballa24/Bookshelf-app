@@ -1,5 +1,6 @@
 import { categhory } from "../constant/index.js";
-import { resetForm } from "../view/action.js";
+import APIService from "../service/API.service.js";
+
 class Form extends HTMLElement {
   connectedCallback() {
     this.isShow = this.getAttribute("isShow") || null;
@@ -61,9 +62,10 @@ class Form extends HTMLElement {
     </div>`;
 
     this.querySelector(".close").addEventListener("click", function () {
+      const apiService = new APIService()
       let formContainer = document.querySelector(".form-container");
       formContainer.style.display = "none";
-      resetForm();
+      apiService.resetForm()
     });
   }
 }

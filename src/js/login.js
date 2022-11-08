@@ -1,10 +1,11 @@
-import { isStorageExist, checkUserLogin, saveToStorage } from "./view/main.js";
 import { ToastShow } from "./swal.js";
-import { USER_STORAGE_KEY } from "./constant/index.js";
+import { BOOKS_STORAGE_KEY, USER_STORAGE_KEY } from "./constant/index.js";
+import StorageService from "./service/storage.service.js";
 
 const form = document.getElementById("formLogin");
 const inputName = document.querySelector("#name");
 const inputProffesion = document.querySelector("#profession");
+const storageService = new StorageService(BOOKS_STORAGE_KEY, USER_STORAGE_KEY);
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -22,20 +23,20 @@ form.addEventListener("submit", (e) => {
     profession: inputProffesion.value,
   };
 
-  if(isStorageExist()){
-    saveToStorage(data, USER_STORAGE_KEY);
+  if (storageService.isStorageExist()) {
+    storageService.saveToStorage(data, USER_STORAGE_KEY);
     return (window.location.pathname = "Bookshelf-app/index.html");
-  }else{
+  } else {
     return (window.location.pathname = "Bookshelf-app/index.html");
   }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (isStorageExist()) {
-    if (checkUserLogin()) {
+  if (storageService.isStorageExist()) {
+    if (storageService.checkUserLogin()) {
       return (window.location.pathname = "Bookshelf-app/index.html");
     }
-  }else{
+  } else {
     return (window.location.pathname = "Bookshelf-app/index.html");
   }
 });
