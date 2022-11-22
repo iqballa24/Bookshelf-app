@@ -14,7 +14,7 @@ class Form extends HTMLElement {
     });
 
     this.innerHTML = `
-    <div class="form-container">
+    <div class="form-container hide">
         <div class="form-content">
             <span class="close">&times;</span>
             <h1 class="text-green" style="margin-bottom: 3.5rem">New Book</h1>
@@ -62,10 +62,9 @@ class Form extends HTMLElement {
     </div>`;
 
     this.querySelector(".close").addEventListener("click", function () {
-      const apiService = new APIService()
-      let formContainer = document.querySelector(".form-container");
-      formContainer.style.display = "none";
-      apiService.resetForm()
+      const apiService = new APIService();
+      apiService.toggleShowForm(false);
+      apiService.resetForm();
     });
   }
 }
