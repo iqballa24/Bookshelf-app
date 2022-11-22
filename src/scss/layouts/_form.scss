@@ -1,7 +1,6 @@
 .form {
   &-container {
     overflow: auto;
-    display: none;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -9,9 +8,17 @@
     padding-top: 2rem;
     left: 0;
     top: 0;
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
     border: none;
+
+    &.hide {
+      display: none;
+    }
+
+    &.show {
+      animation: fade 0.3s ease forwards;
+      background-color: rgb(0, 0, 0); /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+    }
   }
 
   &-content {
@@ -37,5 +44,46 @@
       text-decoration: none;
       cursor: pointer;
     }
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
   }
 }

@@ -48,9 +48,13 @@ export default class APIService {
   }
 
   toggleShowForm(show) {
-    return show
-      ? (this.formContainer.style.display = "block")
-      : (this.formContainer.style.display = "none");
+    if (show) {
+      this.formContainer.classList.add("show");
+      this.formContainer.classList.remove("hide");
+    } else {
+      this.formContainer.classList.add("hide");
+      this.formContainer.classList.remove("show");
+    }
   }
 
   getBookById(idBook, books) {
@@ -111,24 +115,24 @@ export default class APIService {
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
       action;
-      this.formContainer.style.display = "none";
+      this.toggleShowForm(false);
       this.resetForm();
     });
   }
 
-  getTotalShelf(books){  
+  getTotalShelf(books) {
     const totalRead = books.filter((book) => {
       return book.isComplete;
     });
-  
+
     const totalUnread = books.filter((book) => {
       return !book.isComplete;
     });
-  
+
     return (
       (this.textTotal.innerHTML = books.length),
       (this.textTotalRead.innerHTML = totalRead.length),
       (this.textTotalUnread.innerHTML = totalUnread.length)
     );
-  };
+  }
 }
