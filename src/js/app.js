@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("userName").innerText = data.name;
       document.getElementById("userProfession").innerText = data.profession;
     } else {
-      return (window.location.pathname = "Bookshelf-app/login.html");
+      return (window.location.pathname = "Bookshelf-app/dist/login.html");
     }
   }
 });
